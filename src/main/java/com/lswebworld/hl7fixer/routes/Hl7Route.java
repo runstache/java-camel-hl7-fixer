@@ -18,8 +18,7 @@ public class Hl7Route extends RouteBuilder {
     from("file://" + settings.getSourceDirectory()
         + "?delete=false"
         + "&preMove=staging"
-        + "&move=completed"
-        + "&antInclude=*.xml")
+        + "&move=completed")
       .routeId("hl7-route")
       .convertBodyTo(String.class)
       .to("bean:Hl7Processor")
